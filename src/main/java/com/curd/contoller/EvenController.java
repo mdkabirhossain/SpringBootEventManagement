@@ -48,7 +48,7 @@ public class EvenController {
 		Optional<EventModel> event = eventurdresository.findById(id);
 		
 		if (!event.isPresent()) {
-			throw new EventNotFoundException("Id is not found");
+			throw new EventNotFoundException(String.format("Given id [%s] was not found", id));
 		}
 		return event.get();
 
